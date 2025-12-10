@@ -12,7 +12,7 @@ function checkAnswer() {
     } else {
         feedback.textContent = "That's incorrect. Try again!";
     }
-
-    const submitButton = document.getElementById("submit-answer");
-    submitButton.addEventListener("click", checkAnswer);
 }
+
+const submitButton = document.getElementById("submit-answer");
+submitButton.addEventListener("click", checkAnswer);
