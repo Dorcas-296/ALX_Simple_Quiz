@@ -1,14 +1,21 @@
 function checkAnswer() {
-    const correctAnswer = ("4");
+    const correctAnswer = "4";
 
     //Retrieve the user's answer
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-    const userAnswer = electionedOption ? selectedOption.value : null;
+    
+    if (!selectedOption) {
+        document.getElementById("feedback").textContent = "Please select an answer.";
+        return;
+    }
+
+    const userAnswer = selectedOption.value;
+
     const feedback = document.getElementById("feedback");
 
     //compare value and give feedbck
     if (userAnswer === correctAnswer) {
-        feedback.textContent = "correct! Well done.";
+        feedback.textContent = "Correct! Well done.";
     } else {
         feedback.textContent = "That's incorrect. Try again!";
     }
