@@ -3,16 +3,10 @@ function checkAnswer() {
 
     //Retrieve the user's answer
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-
-    if (!selectedOption) {
-        document.getElementById("feedback").textContent = "Please select an answer.";
-        return;
-    }
-
-    const userAnswer = selectedOption.value;
+    const userAnswer = electionedOption ? selectedOption.value : null;
     const feedback = document.getElementById("feedback");
 
-    //compare value
+    //compare value and give feedbck
     if (userAnswer === correctAnswer) {
         feedback.textContent = "correct! Well done.";
     } else {
